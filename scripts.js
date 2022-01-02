@@ -35,7 +35,10 @@ function game() {
   let playerSelection = userPlay();
   let computerSelection = computerPlay();
   console.log("Player Selection: " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1,).toLowerCase());
-  console.log("Computer Selection: " + computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1,).toLowerCase());
+  if(((playerSelection == "Paper")) || (playerSelection == "Scissors") || (playerSelection == "Rock")) {
+    console.log("Computer Selection: " + computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1,).toLowerCase());
+  }
+  
   playRound(playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1,).toLowerCase(), computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1,).toLowerCase());
 }
 
