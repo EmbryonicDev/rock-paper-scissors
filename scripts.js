@@ -8,6 +8,9 @@ function userPlay() {
   return(prompt("Choose: Rock, Paper, or Scissors to Play,"));
 }
 
+let userScore = 0;
+let computerScore = 0;
+
 function playRound(playerSelection, computerSelection) {
   if(((playerSelection == "Paper" && computerSelection == "Rock")) || (playerSelection == "Scissors" && computerSelection == "Paper") || (playerSelection == "Rock" && computerSelection == "Scissors")) {
     userScore += 1;
@@ -34,7 +37,6 @@ function game() {
   let computerSelection = computerPlay();
   console.log("Player Selection: " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1,).toLocaleLowerCase());
   console.log("Computer Selection: " + computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1,).toLocaleLowerCase());
-  // console.log(playRound(playerSelection, computerSelection));
   playRound(playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1,).toLocaleLowerCase(), computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1,).toLocaleLowerCase());
 }
 
