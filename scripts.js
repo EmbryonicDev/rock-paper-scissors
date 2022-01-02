@@ -37,3 +37,13 @@ function game() {
   // console.log(playRound(playerSelection, computerSelection));
   playRound(playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1,).toLocaleLowerCase(), computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1,).toLocaleLowerCase());
 }
+
+while(userScore  < 3 && computerScore < 3) {
+  game();
+}
+
+if(userScore > computerScore) {
+  console.log("Game Over!\nYou Win!");
+} else {
+  console.log("Game Over!\nYou Lose!");
+}
