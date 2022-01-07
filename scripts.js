@@ -3,6 +3,25 @@ const gameOptions = ["Rock", "Paper", "Scissors"]
 function computerPlay() {
   return(gameOptions[Math.floor(Math.random() * gameOptions.length)]);
 }
+
+const btnRock = document.querySelector('.btnRock');
+btnRock.addEventListener('click', () => {
+  playerSelection = "Rock";
+  console.log('Player selected: ' + playerSelection);
+});
+
+const btnPaper = document.querySelector('.btnPaper');
+btnPaper.addEventListener('click', () => {
+  playerSelection = "Paper";
+  console.log('Player selected: ' + playerSelection);
+});
+
+const btnScissors = document.querySelector('.btnScissors');
+btnScissors.addEventListener('click', () => {
+  playerSelection = "Scissors";
+  console.log('Player selected: ' + playerSelection);
+});
+
 // Temporarily comment out
 // function userPlay() {
 //   return(prompt("Choose: Rock, Paper, or Scissors to Play,"));
@@ -52,38 +71,21 @@ function playRound(playerSelection, computerSelection) {
 // }
 
 // TEmporarily comment out
-// function game() {
-//   let playerSelection = userPlay();
-//   let computerSelection = computerPlay();
-//   console.log("Player Selection: " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1,).toLowerCase());
-//   console.log("Computer Selection: " + computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1,).toLowerCase());
-//   playRound(playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1,).toLowerCase(), computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1,).toLowerCase());
-// }
+function game() {
+  let playerSelection = userPlay();
+  let computerSelection = computerPlay();
+  console.log("Player Selection: " + playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1,).toLowerCase());
+  console.log("Computer Selection: " + computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1,).toLowerCase());
+  playRound(playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1,).toLowerCase(), computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1,).toLowerCase());
+}
 
-// while(userScore  < 3 && computerScore < 3) {
-//   game();
-// }
+while(userScore  < 3 && computerScore < 3) {
+  game();
+}
 
-// if(userScore > computerScore) {
-//   console.log("Game Over!\nYou Won the Game!");
-// } else {
-//   console.log("Game Over!\nYou Lost the Game!");
-// }
+if(userScore > computerScore) {
+  console.log("Game Over!\nYou Won the Game!");
+} else {
+  console.log("Game Over!\nYou Lost the Game!");
+}
 
-const btnRock = document.querySelector('.btnRock');
-btnRock.addEventListener('click', () => {
-  playerSelection = "Rock";
-  console.log('Player selected: ' + playerSelection);
-});
-
-const btnPaper = document.querySelector('.btnPaper');
-btnPaper.addEventListener('click', () => {
-  playerSelection = "Paper";
-  console.log('Player selected: ' + playerSelection);
-});
-
-const btnScissors = document.querySelector('.btnScissors');
-btnScissors.addEventListener('click', () => {
-  playerSelection = "Scissors";
-  console.log('Player selected: ' + playerSelection);
-});
