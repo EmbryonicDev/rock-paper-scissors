@@ -6,7 +6,7 @@ function computerPlay() {
   return(gameOptions[Math.floor(Math.random() * gameOptions.length)]);
 }
 
-function selectionDisplay(playerSelection, computerSelection) {
+function selectionOutput(playerSelection, computerSelection) {
   console.log('Player selected: ' + playerSelection);
   console.log('Computer selected: ' + computerSelection);
 }
@@ -15,7 +15,7 @@ const btnRock = document.querySelector('.btnRock');
 btnRock.addEventListener('click', () => {
   let playerSelection = gameOptions[0];
   let computerSelection = computerPlay();
-  selectionDisplay(playerSelection, computerSelection);
+  selectionOutput(playerSelection, computerSelection);
   playRound(playerSelection, computerSelection);
   scoreCheck();
 });
@@ -24,7 +24,7 @@ const btnPaper = document.querySelector('.btnPaper');
 btnPaper.addEventListener('click', () => {
   let playerSelection = gameOptions[1];
   let computerSelection = computerPlay();
-  selectionDisplay(playerSelection, computerSelection);
+  selectionOutput(playerSelection, computerSelection);
   playRound(playerSelection, computerSelection);
   scoreCheck();
 });
@@ -33,7 +33,7 @@ const btnScissors = document.querySelector('.btnScissors');
 btnScissors.addEventListener('click', () => {
   let playerSelection = gameOptions[2];
   let computerSelection = computerPlay();
-  selectionDisplay(playerSelection, computerSelection);
+  selectionOutput(playerSelection, computerSelection);
   playRound(playerSelection, computerSelection);
   scoreCheck();
 });
