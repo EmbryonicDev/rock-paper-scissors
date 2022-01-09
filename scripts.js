@@ -1,3 +1,4 @@
+// *** ↓ Game Code ↓ ***
 const gameOptions = ["Rock", "Paper", "Scissors"]
 const roundsToWin = 3;
 
@@ -53,7 +54,6 @@ function scoreCheck() {
     console.log("Choose your weapon to start a new game...");
   }
 }
-
 
 function playRound(playerSelection, computerSelection) {
   if((playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper") || (playerSelection == "Rock" && computerSelection == "Scissors")) {
