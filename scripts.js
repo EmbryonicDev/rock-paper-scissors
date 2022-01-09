@@ -7,6 +7,12 @@ function computerPlay() {
 }
 
 function selectionOutput(playerSelection, computerSelection) {
+  const mainDispl = document.querySelector('#mainDispl');
+  const output = document.createElement('p');
+  output.classList.add('output');
+  output.textContent = 'Player selected: ' + playerSelection;
+  output.textContent += 'Computer selected: ' + computerSelection;
+  mainDispl.append(output);
   console.log('Player selected: ' + playerSelection);
   console.log('Computer selected: ' + computerSelection);
 }
