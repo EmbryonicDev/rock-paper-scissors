@@ -16,9 +16,10 @@ const compDispl = document.querySelector('#compDispl');
 const compOutput = document.createElement('p');
 
 function selectionmainOutput(playerSelection, computerSelection) {
-  mainOutput.innerText = 'Player selected: ' + playerSelection;
-  mainOutput.innerText += '\nComputer selected: ' + computerSelection;
-  mainDispl.append(mainOutput);
+  userOutput.innerText = 'Player selected: ' + playerSelection;
+  compOutput.innerText += '\nComputer selected: ' + computerSelection;
+  compDispl.append(compOutput);
+  userDispl.append(userOutput);
   console.log('Player selected: ' + playerSelection);
   console.log('Computer selected: ' + computerSelection);
 }
