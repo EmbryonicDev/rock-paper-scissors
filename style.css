@@ -26,8 +26,9 @@ body {
 }
 
 #mainContr  {
+  margin-top: 0;
   display: flex;
-  width: 90%;
+  width: 80%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -59,6 +60,7 @@ body {
   border: solid white;
   height: fit-content;
   width: 140px;
+  min-height: 350px;
   padding: 5px;
   margin: 10px 30px;
 }
@@ -99,8 +101,8 @@ body {
 
 footer  {
   margin-top: auto;
-  color: blueviolet;
-  background-color: cornsilk;
+  color: white;
+  background-color: rgb(58, 55, 44);
   width: 100%;
   text-align: center;
 }
