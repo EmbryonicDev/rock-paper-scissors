@@ -1,0 +1,4 @@
+For animation: LottieFiles / https://greensock.com/
+
+
+Display text of round & game results on screen
