@@ -16,8 +16,8 @@ const compDispl = document.querySelector('#compDispl');
 const compOutput = document.createElement('p');
 
 function selectionmainOutput(playerSelection, computerSelection) {
-  userOutput.innerText = 'Player Selected: ' + playerSelection;
-  compOutput.innerText = 'Computer Selected: ' + computerSelection;
+  userOutput.innerText = 'Player\'s Weapon: ' + playerSelection;
+  compOutput.innerText = 'Computer\'s Weapon: ' + computerSelection;
   compDispl.append(compOutput);
   userDispl.append(userOutput);
 }
