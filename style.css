@@ -1,8 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  /* background-image: url("./images/great-sphinx-of-giza.jpg");
+  background-image: url("./images/stars.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-color: black; */
+  background-repeat: repeat;
+  background-color: black;
   height: 100vh;
   width: 100vw;
   border: 10px solid transparent;
