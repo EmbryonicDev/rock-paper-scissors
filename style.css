@@ -3,16 +3,22 @@ html, body {
   padding: 0;
 }
 
+header  {
+  margin-bottom: auto;
+}
+
 body {
   /* background-image: url("./images/stars.jpg");
   background-size: cover;
   background-repeat: repeat; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   font-family: 'Vujahday Script', cursive;
   font-size: 24px;
   background-color: black;
   height: 100vh;
   width: 100vw;
-  border: 10px solid transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,8 +83,6 @@ body {
   height: 130px;
   width: 80px;
   margin: 10px 30px;
-  
-  
 }
 
 #btnRock {
@@ -91,4 +95,12 @@ body {
 
 #btnScissors {
   background-image: url("./images/scissors.png");
+}
+
+footer  {
+  margin-top: auto;
+  color: blueviolet;
+  background-color: cornsilk;
+  width: 100%;
+  text-align: center;
 }
