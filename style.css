@@ -35,7 +35,7 @@ body {
 #mainContr  {
   display: flex;
   flex: 1;
-  width: 80%;
+  width: fit-content;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -80,13 +80,16 @@ body {
 #mainDispl  {
   display: flex;
   flex: 1;
+  min-width: 40%;
   justify-content: center;
-  margin: 5px;
+  margin-bottom: 10px;
+  margin-top: 0;
 }
 
 #usrBtn {
   border: solid white;
-  margin-bottom: 10px;
+  margin: 10px;
+  margin-top: 0;
 }
 
 #btnRock,
