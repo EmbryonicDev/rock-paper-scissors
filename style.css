@@ -60,22 +60,28 @@ body {
 }
 
 #userDispl, 
-#compDispl  {
+#compDispl,
+#mainDispl  {
+  background-color: rgba(58, 55, 44, 0.4);
   border: solid white;
-  height: fit-content;
-  width: 140px;
-  min-height: 152px;
   padding: 5px;
   margin: 10px;
+  border-radius: 8px;
+}
+
+#userDispl, 
+#compDispl  {
+  width: 140px;
+  min-height: 152px;
+  width: 140px;
+  min-height: 152px;
 }
 
 #mainDispl  {
   display: flex;
   flex: 1;
   justify-content: center;
-  border: solid white;
-  margin: 10px;
-  padding: 5px;
+  margin: 5px;
 }
 
 #usrBtn {
