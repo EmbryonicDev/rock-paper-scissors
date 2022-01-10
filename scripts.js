@@ -62,7 +62,7 @@ function scoreCheck() {
     }
     userScore = 0;
     compScore = 0;
-    mainOutput.innerText += "\n\nChoose your weapon to start a new game...";
+    mainOutput.innerText += "\n\nChoose Your Weapon to Start a New Game...";
   }
 }
 
@@ -74,7 +74,7 @@ function playRound(playerSelection, computerSelection) {
     compScore += 1;
     mainOutput.innerText = (`You Lose this Round! \n${computerSelection} Beats ${playerSelection}...`);
   } else if(computerSelection == playerSelection) {
-    mainOutput.innerText = ("\n\nIt's a Tie! Let's Try Again...");
+    mainOutput.innerText = ("It's a Tie! Let's Try Again...");
   } else {
       mainOutput.innerText += ("\nYou did not Choose a Valid Option! \nConcentrate, & Try Again!");
 
