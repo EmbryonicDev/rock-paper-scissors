@@ -48,6 +48,7 @@ body  {
   margin: 10px;
 }
 
-.btns {
+#compBtn,
+#usrBtn {
   margin: 10px;
 }
