@@ -10,6 +10,8 @@ function computerPlay() {
 
 const mainDispl = document.querySelector('#mainDispl');
 const mainOutput = document.createElement('p');
+const userDispl = document.querySelector('#userDispl');
+const userOutput = document.createElement('p');
 
 function selectionmainOutput(playerSelection, computerSelection) {
   mainOutput.innerText = 'Player selected: ' + playerSelection;
