@@ -7,6 +7,6 @@ Simple implementation of grade-school classic “rock paper scissors" where it's
 images: 
 great-sphinx-of-giza: Pexels - Creative Commons Zero (CC0) license
 
-
+rock / paper / scissor buttons: https://www.vecteezy.com
 
 
