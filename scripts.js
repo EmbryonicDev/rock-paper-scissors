@@ -8,15 +8,13 @@ function computerPlay() {
   return(gameOptions[Math.floor(Math.random() * gameOptions.length)]);
 }
 
-const usrBtn = document.getElementById('usrBtn').addEventListener('click', remOutput);
-
 const mainDispl = document.querySelector('#mainDispl');
 const output = document.createElement('p');
+output.classList.add('output');
 
 function selectionOutput(playerSelection, computerSelection) {
-  output.classList.add('output');
-  output.textContent = 'Player selected: ' + playerSelection;
-  output.textContent += 'Computer selected: ' + computerSelection;
+  output.innerText = 'Player selected: ' + playerSelection;
+  output.innerText += '\nComputer selected: ' + computerSelection;
   mainDispl.append(output);
   console.log('Player selected: ' + playerSelection);
   console.log('Computer selected: ' + computerSelection);
