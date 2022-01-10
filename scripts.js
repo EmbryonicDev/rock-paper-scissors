@@ -54,9 +54,9 @@ function scoreCheck() {
   if(userScore == roundsToWin || computerScore == roundsToWin) {
     mainOutput.innerText = "Game Over!";
     if(userScore > computerScore) {
-      mainOutput.innerText += "\nYou Won the Game!";
+      mainOutput.innerText += `\nYou Won the Game! \n\nFinal Score: \n Player Score: ${userScore} \nComputer Score: ${computerScore}`;
     } else {
-      mainOutput.innerText += "\nYou Lost the Game!";
+      mainOutput.innerText += `\nYou Lost the Game! \n\nFinal Score: \n Player Score: ${userScore} \nComputer Score: ${computerScore}`;
     }
     userScore = 0;
     computerScore = 0;
@@ -70,7 +70,7 @@ function playRound(playerSelection, computerSelection) {
     mainOutput.innerText = (`You Win this Round!\n ${playerSelection} Beats ${computerSelection}...`);
     mainOutput.innerText += (`\nYour Score = ${userScore} \nComputer Score = ${computerScore}`);
   } else if((playerSelection == "Rock" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Rock")) {
-    computerScore = 1;
+    computerScore += 1;
     mainOutput.innerText = (`You Lose this Round! \n${computerSelection} Beats ${playerSelection}...`);
     mainOutput.innerText += (`\nYour Score = ${userScore} \nComputer Score = ${computerScore}`);
   } else if(computerSelection == playerSelection) {
