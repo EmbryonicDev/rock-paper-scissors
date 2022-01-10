@@ -49,34 +49,34 @@ btnScissors.addEventListener('click', () => {
 
 function scoreCheck() {
   if(userScore == roundsToWin || computerScore == roundsToWin) {
-    console.log("Game Over!");
+    output.innerText = "Game Over!";
     if(userScore > computerScore) {
-      console.log("You Won the Game!");
+      output.innerText += "\nYou Won the Game!";
     } else {
-      console.log("You Lost the Game!");
+      output.innerText += "\nYou Lost the Game!";
     }
     userScore = 0;
     computerScore = 0;
-    console.log("Choose your weapon to start a new game...");
+    output.innerText += "\n\nChoose your weapon to start a new game...";
   }
 }
 
 function playRound(playerSelection, computerSelection) {
   if((playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper") || (playerSelection == "Rock" && computerSelection == "Scissors")) {
     userScore += 1;
-    console.log(`You Win this Round! ${playerSelection} Beats ${computerSelection}...`);
-    console.log(`Your Score = ${userScore}, Computer Score = ${computerScore}`);
-    console.log("");
+    output.innerText += (`\nYou Win this Round! \n${playerSelection} Beats ${computerSelection}...`);
+    output.innerText += (`\nYour Score = ${userScore} \nComputer Score = ${computerScore}`);
+    output.innerText += ("\n");
   } else if((playerSelection == "Rock" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Rock")) {
     computerScore += 1;
-    console.log(`You Lose this Round! ${computerSelection} Beats ${playerSelection}...`);
-    console.log(`Your Score = ${userScore}, Computer Score = ${computerScore}`);
-    console.log("");
+    output.innerText += (`\nYou Lose this Round! \n${computerSelection} Beats ${playerSelection}...`);
+    output.innerText += (`\nYour Score = ${userScore} \nComputer Score = ${computerScore}`);
+    output.innerText += ("\n");
   } else if(computerSelection == playerSelection) {
-    console.log("It's a Tie! Let's Try Again...");
-    console.log("");
+    output.innerText += ("\nIt's a Tie! Let's Try Again...");
+    output.innerText += ("\n");
   } else {
-      console.log("You did not Choose a Valid Option! Concentrate, & Try Again!");
-      console.log("");
+      output.innerText += ("\nYou did not Choose a Valid Option! \nConcentrate, & Try Again!");
+      output.innerText += ("\n");
   }
 }
