@@ -22,7 +22,7 @@ function selectionmainOutput(playerSelection, computerSelection) {
   userDispl.append(userOutput);
 }
 
-const btnRock = document.querySelector('.btnRock');
+const btnRock = document.querySelector('#btnRock');
 btnRock.addEventListener('click', () => {
   let playerSelection = gameOptions[0];
   let computerSelection = computerPlay();
@@ -31,7 +31,7 @@ btnRock.addEventListener('click', () => {
   scoreCheck();
 });
 
-const btnPaper = document.querySelector('.btnPaper');
+const btnPaper = document.querySelector('#btnPaper');
 btnPaper.addEventListener('click', () => {
   let playerSelection = gameOptions[1];
   let computerSelection = computerPlay();
@@ -40,7 +40,7 @@ btnPaper.addEventListener('click', () => {
   scoreCheck();
 });
 
-const btnScissors = document.querySelector('.btnScissors');
+const btnScissors = document.querySelector('#btnScissors');
 btnScissors.addEventListener('click', () => {
   let playerSelection = gameOptions[2];
   let computerSelection = computerPlay();
