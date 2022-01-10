@@ -74,7 +74,7 @@ function playRound(playerSelection, computerSelection) {
     mainOutput.innerText = (`You Lose this Round! \n${computerSelection} Beats ${playerSelection}...`);
     mainOutput.innerText += (`\nYour Score = ${userScore} \nComputer Score = ${computerScore}`);
   } else if(computerSelection == playerSelection) {
-    mainOutput.innerText += ("\n\nIt's a Tie! Let's Try Again...");
+    mainOutput.innerText = ("\n\nIt's a Tie! Let's Try Again...");
   } else {
       mainOutput.innerText += ("\nYou did not Choose a Valid Option! \nConcentrate, & Try Again!");
 
