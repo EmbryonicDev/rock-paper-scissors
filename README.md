@@ -5,7 +5,7 @@ live: https://embryonicdev.github.io/rock-paper-scissors/
 Simple implementation of grade-school classic “rock paper scissors" where it's the player vs the computer. 
 
 images: 
-great-sphinx-of-giza: Pexels - Creative Commons Zero (CC0) license
+stars: Pexels - Photo by Felix Mittermeier from Pexels
 
 rock / paper / scissor buttons: https://www.vecteezy.com
 
