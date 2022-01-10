@@ -1,14 +1,19 @@
 // *** ↓ Game Code ↓ ***
 const gameOptions = ["Rock", "Paper", "Scissors"]
 const roundsToWin = 3;
+let userScore = 0;
+let computerScore = 0;
 
 function computerPlay() {
   return(gameOptions[Math.floor(Math.random() * gameOptions.length)]);
 }
 
+const usrBtn = document.getElementById('usrBtn').addEventListener('click', remOutput);
+
+const mainDispl = document.querySelector('#mainDispl');
+const output = document.createElement('p');
+
 function selectionOutput(playerSelection, computerSelection) {
-  const mainDispl = document.querySelector('#mainDispl');
-  const output = document.createElement('p');
   output.classList.add('output');
   output.textContent = 'Player selected: ' + playerSelection;
   output.textContent += 'Computer selected: ' + computerSelection;
@@ -43,9 +48,6 @@ btnScissors.addEventListener('click', () => {
   playRound(playerSelection, computerSelection);
   scoreCheck();
 });
-
-let userScore = 0;
-let computerScore = 0;
 
 function scoreCheck() {
   if(userScore == roundsToWin || computerScore == roundsToWin) {
