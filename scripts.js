@@ -2,7 +2,7 @@
 const gameOptions = ["Rock", "Paper", "Scissors"]
 const roundsToWin = 2;
 let userScore = 0;
-let computerScore = 0;
+let compScore = 0;
 
 function computerPlay() {
   return(gameOptions[Math.floor(Math.random() * gameOptions.length)]);
@@ -51,15 +51,17 @@ btnScissors.addEventListener('click', () => {
 
 function scoreCheck() {
   mainDispl.append(mainOutput);
-  if(userScore == roundsToWin || computerScore == roundsToWin) {
+  userOutput.innerText += `\nScore: ${userScore}`;
+  compOutput.innerText += `\nScore: ${compScore}`;
+  if(userScore == roundsToWin || compScore == roundsToWin) {
     mainOutput.innerText = "Game Over!";
-    if(userScore > computerScore) {
-      mainOutput.innerText += `\nYou Won the Game! \n\nFinal Score: \n Player Score: ${userScore} \nComputer Score: ${computerScore}`;
+    if(userScore > compScore) {
+      mainOutput.innerText += `\nYou Won the Game! \n\nFinal Score: \n Player Score: ${userScore} \nComputer Score: ${compScore}`;
     } else {
-      mainOutput.innerText += `\nYou Lost the Game! \n\nFinal Score: \n Player Score: ${userScore} \nComputer Score: ${computerScore}`;
+      mainOutput.innerText += `\nYou Lost the Game! \n\nFinal Score: \n Player Score: ${userScore} \nComputer Score: ${compScore}`;
     }
     userScore = 0;
-    computerScore = 0;
+    compScore = 0;
     mainOutput.innerText += "\n\nChoose your weapon to start a new game...";
   }
 }
@@ -68,11 +70,9 @@ function playRound(playerSelection, computerSelection) {
   if((playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper") || (playerSelection == "Rock" && computerSelection == "Scissors")) {
     userScore += 1;
     mainOutput.innerText = (`You Win this Round!\n ${playerSelection} Beats ${computerSelection}...`);
-    mainOutput.innerText += (`\nYour Score = ${userScore} \nComputer Score = ${computerScore}`);
   } else if((playerSelection == "Rock" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Rock")) {
-    computerScore += 1;
+    compScore += 1;
     mainOutput.innerText = (`You Lose this Round! \n${computerSelection} Beats ${playerSelection}...`);
-    mainOutput.innerText += (`\nYour Score = ${userScore} \nComputer Score = ${computerScore}`);
   } else if(computerSelection == playerSelection) {
     mainOutput.innerText = ("\n\nIt's a Tie! Let's Try Again...");
   } else {
