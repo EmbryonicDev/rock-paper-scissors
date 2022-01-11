@@ -52,16 +52,13 @@ h1  {
 #playerBox  {
   display:flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  gap: 10px;
   height: 200px;
   width: 90%;
   border: solid white;
   margin: 10px;
   border-radius: 8px;
-}
- 
-#compDispl  {
-  margin-right: 10px;
 }
 
 #userDispl, 
@@ -70,16 +67,23 @@ h1  {
   background-color: rgba(58, 55, 44, 0.4);
   border: solid white;
   padding: 5px;
-  margin: 10px;
   border-radius: 8px;
 }
 
 #userDispl, 
 #compDispl  {
-  width: 140px;
-  min-height: 152px;
-  width: 140px;
-  min-height: 152px;
+  display: flex;
+  text-align: center;
+  width: 90%;
+  height: 80%;
+}
+
+#userDispl  {
+  margin-left: 10px;
+}
+
+#compDispl  {
+  margin-right: 10px;
 }
 
 #mainDispl  {
