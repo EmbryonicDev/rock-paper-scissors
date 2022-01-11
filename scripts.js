@@ -27,10 +27,13 @@ compTotalText.classList.add('paraDispl');
 
 userName = window.prompt("Choose Your Battle Name to Begin");
 if(userName == null || userName.trim() == "") userName = "Player";
+while(userName.length > 20) {
+    userName = window.prompt("Choose a Name With 20 Characters or Less if You Want to Play");
+  }
 
-roundsToWin = window.prompt("How many Rounds Won will Determine the Winner?/nChoose Between 3 & 10");
+roundsToWin = window.prompt("How Many Rounds Won will Determine the Winner?\nChoose Between 3 & 10");
 while(roundsToWin == null || roundsToWin.trim() == "" || roundsToWin > 10 || roundsToWin < 3) {
-  roundsToWin = window.prompt("How many Rounds Won will Determine the Winner?/nChoose Between 3 & 10");
+  roundsToWin = window.prompt("How many Rounds Won will Determine the Winner?/nChoose a Number Between 3 & 10 to Start the Game.");
 }
 
 mainOutput.innerText = `Welcome to the Galactic Battle Ground ${userName}!\n\nThe First Player to Score ${roundsToWin} Wins the Game.\n\n\nChoose  Your Weapon to Begin the Game\n ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ "`;
