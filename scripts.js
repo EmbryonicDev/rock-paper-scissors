@@ -57,7 +57,7 @@ btnRock.addEventListener('click', () => {
   let computerSelection = computerPlay();
   selectionmainOutput(playerSelection, computerSelection);
   playRound(playerSelection, computerSelection);
-  scoreCheck();
+  // scoreCheck();
 });
 
 const btnPaper = document.querySelector('#btnPaper');
@@ -66,7 +66,7 @@ btnPaper.addEventListener('click', () => {
   let computerSelection = computerPlay();
   selectionmainOutput(playerSelection, computerSelection);
   playRound(playerSelection, computerSelection);
-  scoreCheck();
+  // scoreCheck();
 });
 
 const btnScissors = document.querySelector('#btnScissors');
@@ -75,22 +75,41 @@ btnScissors.addEventListener('click', () => {
   let computerSelection = computerPlay();
   selectionmainOutput(playerSelection, computerSelection);
   playRound(playerSelection, computerSelection);
-  scoreCheck();
+  // scoreCheck();
 });
 
 function scoreCheck() {
-  mainDispl.append(mainOutput);
-  userTotal.append(userTotalText);
-  compTotal.append(compTotalText);
-  userOutput.innerText += `\nRounds Won: ${userScore}`;
-  compOutput.innerText += `\nRounds Won: ${compScore}`;
+
+
+}
+
+function playRound(playerSelection, computerSelection) {
+  userOutput.style.cssText = "font-weight: normal";
+  compOutput.style.cssText = "font-weight: normal";
+  if((playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper") || (playerSelection == "Rock" && computerSelection == "Scissors")) {
+    userScore += 1;
+    mainOutput.innerText = (`You Win this Round!\n ${playerSelection} Beats ${computerSelection}...`);
+  } else if((playerSelection == "Rock" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Rock")) {
+    compScore += 1;
+    mainOutput.innerText = (`You Lose this Round! \n${computerSelection} Beats ${playerSelection}...`);
+  } else {
+    mainOutput.innerText = ("It's a Tie! Let's Try Again...");
+  }
   if(userScore == roundsToWin || compScore == roundsToWin) {
     mainOutput.innerText = "Game Over!";
     if(userScore > compScore) {
-      mainOutput.innerText += `\nYou Won the Game! \n\nFinal Score: \n ${userName} Score: ${userScore} \nComputer Score: ${compScore}`;
+      mainOutput.innerText += `\nYou Won the Game!\n${playerSelection} Beats ${computerSelection}...\nFinal Score: \n ${userName} Score: ${userScore} \nComputer Score: ${compScore}`;
+      userOutput.innerText = userName + " is the Winner!!!"
+      userOutput.style.cssText = "font-weight: bolder";
+      compOutput.innerText = "Computer is the Loser!!!"
+      compOutput.style.cssText = "font-weight: bolder";
       userGamesWon += 1;
     } else {
-      mainOutput.innerText += `\nYou Lost the Game! \n\nFinal Score: \n ${userName} Score: ${userScore} \nComputer Score: ${compScore}`;
+      mainOutput.innerText += `\nYou Lost the Game!\n${computerSelection} Beats ${playerSelection}...\nFinal Score: \n ${userName} Score: ${userScore} \nComputer Score: ${compScore}`;
+      userOutput.innerText = userName + " is the Loser!!!"
+      userOutput.style.cssText = "font-weight: bolder";
+      compOutput.innerText = "Computer is the Winner!!!"
+      compOutput.style.cssText = "font-weight: bolder";
       compGamesWon += 1;
     }
     userScore = 0;
@@ -102,16 +121,12 @@ function scoreCheck() {
 
   if(userGamesWon > compGamesWon) userTotalText.style.cssText = "font-weight: bolder";
   if(userGamesWon < compGamesWon) compTotalText.style.cssText = "font-weight: bolder";
-}
+  if(userGamesWon == compGamesWon) compTotalText.style.cssText = "font-weight: normal";
 
-function playRound(playerSelection, computerSelection) {
-  if((playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper") || (playerSelection == "Rock" && computerSelection == "Scissors")) {
-    userScore += 1;
-    mainOutput.innerText = (`You Win this Round!\n ${playerSelection} Beats ${computerSelection}...`);
-  } else if((playerSelection == "Rock" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Rock")) {
-    compScore += 1;
-    mainOutput.innerText = (`You Lose this Round! \n${computerSelection} Beats ${playerSelection}...`);
-  } else {
-    mainOutput.innerText = ("It's a Tie! Let's Try Again...");
-  }
+  userOutput.innerText += `\nRounds Won: ${userScore}`;
+  compOutput.innerText += `\nRounds Won: ${compScore}`;
+
+  mainDispl.append(mainOutput);
+  userTotal.append(userTotalText);
+  compTotal.append(compTotalText);
 }
