@@ -10,10 +10,14 @@ function computerPlay() {
 
 const mainDispl = document.querySelector('#mainDispl');
 const mainOutput = document.createElement('p');
+mainOutput.classList.add('paraDispl');
 const userDispl = document.querySelector('#userDispl');
 const userOutput = document.createElement('p');
+userOutput.classList.add('paraDispl');
 const compDispl = document.querySelector('#compDispl');
 const compOutput = document.createElement('p');
+compOutput.classList.add('paraDispl');
+
 
 function selectionmainOutput(playerSelection, computerSelection) {
   userOutput.innerText = 'Player\'s Weapon: ' + playerSelection;
