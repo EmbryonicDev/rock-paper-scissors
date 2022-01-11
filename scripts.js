@@ -1,8 +1,9 @@
 // *** ↓ Game Code ↓ ***
 const gameOptions = ["Rock", "Paper", "Scissors"]
-const roundsToWin = 2;
+let roundsToWin = 2;
 let userScore = 0;
 let compScore = 0;
+let userName = ""
 
 const mainDispl = document.querySelector('#mainDispl');
 const mainOutput = document.createElement('p');
@@ -14,7 +15,10 @@ const compDispl = document.querySelector('#compDispl');
 const compOutput = document.createElement('p');
 compOutput.classList.add('paraDispl');
 
-mainOutput.innerText = "Welcome to the Galactic Battle Ground!\n\nThe First Player to Score 5 Wins the Game.\n\n\nChoose  Your Weapon to Begin the Game\n ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ";
+userName = window.prompt("Choose Your Battle Name to Begin");
+if(userName == null || userName.trim() == "") userName = "Player";
+
+mainOutput.innerText = `Welcome to the Galactic Battle Ground ${userName}!\n\nThe First Player to Score 5 Wins the Game.\n\n\nChoose  Your Weapon to Begin the Game\n ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ "`;
 mainOutput.style.cssText = "font-size: 28px; text-align: center";
 mainDispl.append(mainOutput);
 
@@ -23,7 +27,7 @@ function computerPlay() {
 }
 
 function selectionmainOutput(playerSelection, computerSelection) {
-  userOutput.innerText = 'Player\'s Weapon: ' + playerSelection;
+  userOutput.innerText = userName + '\'s Weapon: ' + playerSelection;
   compOutput.innerText = 'Computer\'s Weapon: ' + computerSelection;
   compDispl.append(compOutput);
   userDispl.append(userOutput);
@@ -63,9 +67,9 @@ function scoreCheck() {
   if(userScore == roundsToWin || compScore == roundsToWin) {
     mainOutput.innerText = "Game Over!";
     if(userScore > compScore) {
-      mainOutput.innerText += `\nYou Won the Game! \n\nFinal Score: \n Player Score: ${userScore} \nComputer Score: ${compScore}`;
+      mainOutput.innerText += `\nYou Won the Game! \n\nFinal Score: \n ${userName} Score: ${userScore} \nComputer Score: ${compScore}`;
     } else {
-      mainOutput.innerText += `\nYou Lost the Game! \n\nFinal Score: \n Player Score: ${userScore} \nComputer Score: ${compScore}`;
+      mainOutput.innerText += `\nYou Lost the Game! \n\nFinal Score: \n ${userName} Score: ${userScore} \nComputer Score: ${compScore}`;
     }
     userScore = 0;
     compScore = 0;
