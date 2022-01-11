@@ -79,12 +79,8 @@ function scoreCheck() {
   mainDispl.append(mainOutput);
   userTotal.append(userTotalText);
   compTotal.append(compTotalText);
-  if(userScore || compScore > 1)  {
-    userTotalText.innerText = `\nGames Won: ${userGamesWon}`;
-    compTotalText.innerText = `\nGames Won: ${compGamesWon}`;
-  }
   userOutput.innerText += `\nRounds Won: ${userScore}`;
-  compOutput.innerText += `\nScore: ${compScore}`;
+  compOutput.innerText += `\nRounds Won: ${compScore}`;
   if(userScore == roundsToWin || compScore == roundsToWin) {
     mainOutput.innerText = "Game Over!";
     if(userScore > compScore) {
@@ -93,6 +89,10 @@ function scoreCheck() {
     } else {
       mainOutput.innerText += `\nYou Lost the Game! \n\nFinal Score: \n ${userName} Score: ${userScore} \nComputer Score: ${compScore}`;
       compGamesWon += 1;
+    }
+    if(userGamesWon > 0 || compGamesWon > 0)  {
+      userTotalText.innerText = `\nGames Won: ${userGamesWon}`;
+      compTotalText.innerText = `\nGames Won: ${compGamesWon}`;
     }
     userScore = 0;
     compScore = 0;
