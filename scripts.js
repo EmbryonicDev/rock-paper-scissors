@@ -38,7 +38,11 @@ while(roundsToWin == null || roundsToWin.trim() == "" || roundsToWin > 10 || rou
 
 mainPargrph.innerText = `Welcome to the Galactic Battle Ground ${userName}!\n\nThe First Player to Score ${roundsToWin} Wins the Game.\n\n\nChoose  Your Weapon to Begin the Game\n ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ "`;
 mainPargrph.style.cssText = "font-size: 28px; text-align: center";
+userTotalPargrph.innerText = ` * * * * * `;
+compTotalPargrph.innerText = ` * * * * * `;
 mainDispl.append(mainPargrph);
+userTotalDispl.append(userTotalPargrph);
+compTotalDispl.append(compTotalPargrph);
 
 function computerPlay() {
   return(gameOptions[Math.floor(Math.random() * gameOptions.length)]);
@@ -80,8 +84,8 @@ btnScissors.addEventListener('click', () => {
 function playRound(userSelect, compSelect) {
   userPargrph.style.cssText = "font-weight: normal";
   compPargrph.style.cssText = "font-weight: normal";
-  userTotalPargrph.innerText = `\nGames Won: ${userGamesWon}`;
-  compTotalPargrph.innerText = `\nGames Won: ${compGamesWon}`;
+  userTotalPargrph.innerText = `Games Won: ${userGamesWon}`;
+  compTotalPargrph.innerText = `Games Won: ${compGamesWon}`;
   if((userSelect == "Paper" && compSelect == "Rock") || (userSelect == "Scissors" && compSelect == "Paper") || (userSelect == "Rock" && compSelect == "Scissors")) {
     userScore += 1;
     mainPargrph.innerText = (`You Win this Round!\n ${userSelect} Beats ${compSelect}...`);
@@ -114,8 +118,8 @@ function playRound(userSelect, compSelect) {
     compScore = 0;
     mainPargrph.innerText += "\n\nChoose Your Weapon to Start a New Game...";
 
-    userTotalPargrph.innerText = `\nGames Won: ${userGamesWon}`;
-    compTotalPargrph.innerText = `\nGames Won: ${compGamesWon}`;
+    userTotalPargrph.innerText = `Games Won: ${userGamesWon}`;
+    compTotalPargrph.innerText = `Games Won: ${compGamesWon}`;
     if(userGamesWon == compGamesWon) compTotalPargrph.style.cssText = "font-weight: normal" && userTotalPargrph.style.cssText == "font-weight: normal";
     if(userGamesWon > compGamesWon) userTotalPargrph.style.cssText = "font-weight: bolder";
     if(userGamesWon < compGamesWon) compTotalPargrph.style.cssText = "font-weight: bolder";
