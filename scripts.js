@@ -120,9 +120,17 @@ function playRound(userSelect, compSelect) {
 
     userTotalPargrph.innerText = `Games Won: ${userGamesWon}`;
     compTotalPargrph.innerText = `Games Won: ${compGamesWon}`;
-    if(userGamesWon == compGamesWon) compTotalPargrph.style.cssText = "font-weight: normal" && userTotalPargrph.style.cssText == "font-weight: normal";
-    if(userGamesWon > compGamesWon) userTotalPargrph.style.cssText = "font-weight: bolder";
-    if(userGamesWon < compGamesWon) compTotalPargrph.style.cssText = "font-weight: bolder";
+    // if(userGamesWon == compGamesWon) compTotalPargrph.style.cssText = "font-weight: normal" && userTotalPargrph.style.cssText == "font-weight: normal";
+    if(userGamesWon > compGamesWon) {
+      userTotalPargrph.style.cssText = "font-weight: bolder";
+      compTotalPargrph.style.cssText = "font-weight: normal"
+    } else if(userGamesWon < compGamesWon) {
+      userTotalPargrph.style.cssText = "font-weight: normal";
+      compTotalPargrph.style.cssText = "font-weight: bolder"
+    } else  {
+      userTotalPargrph.style.cssText = "font-weight: normal";
+      compTotalPargrph.style.cssText = "font-weight: normal"
+    }
   }
 }
 
