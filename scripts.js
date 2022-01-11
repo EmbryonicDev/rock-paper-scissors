@@ -80,6 +80,8 @@ btnScissors.addEventListener('click', () => {
 function playRound(playerSelection, computerSelection) {
   userOutput.style.cssText = "font-weight: normal";
   compOutput.style.cssText = "font-weight: normal";
+  userTotalText.innerText = `\nGames Won: ${userGamesWon}`;
+  compTotalText.innerText = `\nGames Won: ${compGamesWon}`;
   if((playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper") || (playerSelection == "Rock" && computerSelection == "Scissors")) {
     userScore += 1;
     mainOutput.innerText = (`You Win this Round!\n ${playerSelection} Beats ${computerSelection}...`);
