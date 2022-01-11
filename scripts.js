@@ -4,10 +4,6 @@ const roundsToWin = 2;
 let userScore = 0;
 let compScore = 0;
 
-function computerPlay() {
-  return(gameOptions[Math.floor(Math.random() * gameOptions.length)]);
-}
-
 const mainDispl = document.querySelector('#mainDispl');
 const mainOutput = document.createElement('p');
 mainOutput.classList.add('paraDispl');
@@ -18,6 +14,13 @@ const compDispl = document.querySelector('#compDispl');
 const compOutput = document.createElement('p');
 compOutput.classList.add('paraDispl');
 
+mainOutput.innerText = "Welcome to the Galactic Battle Ground!\n\nThe First Player to Score 5 Wins the Game.\n\n\nChoose  Your Weapon to Begin the Game\n ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ";
+mainOutput.style.cssText = "font-size: 28px; text-align: center";
+mainDispl.append(mainOutput);
+
+function computerPlay() {
+  return(gameOptions[Math.floor(Math.random() * gameOptions.length)]);
+}
 
 function selectionmainOutput(playerSelection, computerSelection) {
   userOutput.innerText = 'Player\'s Weapon: ' + playerSelection;
