@@ -18,7 +18,12 @@ compOutput.classList.add('paraDispl');
 userName = window.prompt("Choose Your Battle Name to Begin");
 if(userName == null || userName.trim() == "") userName = "Player";
 
-mainOutput.innerText = `Welcome to the Galactic Battle Ground ${userName}!\n\nThe First Player to Score 5 Wins the Game.\n\n\nChoose  Your Weapon to Begin the Game\n ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ "`;
+roundsToWin = window.prompt("How many Games will Declare the Winner?/nChoose Between 3 & 10");
+while(roundsToWin == null || roundsToWin.trim() == "" || roundsToWin > 10 || roundsToWin < 3) {
+  roundsToWin = window.prompt("How many Games will Declare the Winner?/nChoose Between 3 & 10");
+}
+
+mainOutput.innerText = `Welcome to the Galactic Battle Ground ${userName}!\n\nThe First Player to Score ${roundsToWin} Wins the Game.\n\n\nChoose  Your Weapon to Begin the Game\n ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ "`;
 mainOutput.style.cssText = "font-size: 28px; text-align: center";
 mainDispl.append(mainOutput);
 
