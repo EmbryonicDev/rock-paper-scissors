@@ -10,14 +10,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   font-family: 'Vujahday Script', cursive;
   font-size: 24px;
   background-color: black;
   height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
 }
 
@@ -26,6 +24,7 @@ header  {
   background-color: rgba(58, 55, 0, .6);
   width: 100%;
   text-align: center;
+  height: 60px;
 }
 
 h1  {
@@ -52,11 +51,12 @@ h1  {
 
 #playerBox  {
   display:flex;
+  /* flex: 1; */
   align-items: center;
   justify-content: space-evenly;
-  gap: 10px;
-  height: 150px;
-  width: 95%;
+  gap: 30px;
+  height: 180px;
+  width: 100%;
 }
 
 #totalGames  {
@@ -81,9 +81,9 @@ h1  {
 #compDispl  {
   display: flex;
   align-items: center;
-  width: 90%;
+  width: 234px;
   height: 80%;
-  padding-left: 14px;
+  padding-left: 10px;
 }
 
 #userDispl  {
