@@ -84,7 +84,7 @@ h1  {
 #mainDispl  {
   display: flex;
   flex: 1;
-  min-width: 40%;
+  width: 88%;
   justify-content: center;
   margin-bottom: 10px;
   margin-top: 0;
