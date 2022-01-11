@@ -55,7 +55,16 @@ h1  {
   align-items: center;
   justify-content: space-evenly;
   gap: 10px;
-  height: 200px;
+  height: 150px;
+  width: 95%;
+}
+
+#totalGames  {
+  display:flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 10px;
+  height: 30px;
   width: 95%;
 }
 
