@@ -3,17 +3,6 @@ html, body {
   padding: 0;
 }
 
-header  {
-  margin-bottom: auto;
-  background-color: rgba(58, 55, 0, .6);
-  width: 100%;
-  text-align: center;
-}
-
-h1  {
-  margin: 0;
-}
-
 body {
   background-image: url("./images/stars.jpg");
   background-size: cover;
@@ -30,6 +19,21 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
+}
+
+header  {
+  margin-bottom: auto;
+  background-color: rgba(58, 55, 0, .6);
+  width: 100%;
+  text-align: center;
+}
+
+h1  {
+  margin: 0;
+}
+
+.paraDispl  {
+  margin: 0;
 }
 
 #mainContr  {
