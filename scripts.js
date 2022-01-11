@@ -1,6 +1,8 @@
 // *** ↓ Game Code ↓ ***
 const gameOptions = ["Rock", "Paper", "Scissors"]
-let roundsToWin = 2;
+let roundsToWin = "";
+let userGamesWon = 0;
+let compGamesWon = 0;
 let userScore = 0;
 let compScore = 0;
 let userName = ""
@@ -8,19 +10,27 @@ let userName = ""
 const mainDispl = document.querySelector('#mainDispl');
 const mainOutput = document.createElement('p');
 mainOutput.classList.add('paraDispl');
+
 const userDispl = document.querySelector('#userDispl');
 const userOutput = document.createElement('p');
 userOutput.classList.add('paraDispl');
+const userTotal = document.querySelector('#userTotal');
+const userTotalText = document.createElement('p');
+userTotalText.classList.add('paraDispl');
+
 const compDispl = document.querySelector('#compDispl');
 const compOutput = document.createElement('p');
 compOutput.classList.add('paraDispl');
+const compTotal = document.querySelector('#compTotal');
+const compTotalText = document.createElement('p');
+compTotalText.classList.add('paraDispl');
 
 userName = window.prompt("Choose Your Battle Name to Begin");
 if(userName == null || userName.trim() == "") userName = "Player";
 
-roundsToWin = window.prompt("How many Games Won will Determine the Winner?/nChoose Between 3 & 10");
+roundsToWin = window.prompt("How many Rounds Won will Determine the Winner?/nChoose Between 3 & 10");
 while(roundsToWin == null || roundsToWin.trim() == "" || roundsToWin > 10 || roundsToWin < 3) {
-  roundsToWin = window.prompt("How many Games will Declare the Winner?/nChoose Between 3 & 10");
+  roundsToWin = window.prompt("How many Rounds Won will Determine the Winner?/nChoose Between 3 & 10");
 }
 
 mainOutput.innerText = `Welcome to the Galactic Battle Ground ${userName}!\n\nThe First Player to Score ${roundsToWin} Wins the Game.\n\n\nChoose  Your Weapon to Begin the Game\n ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ "`;
@@ -67,14 +77,22 @@ btnScissors.addEventListener('click', () => {
 
 function scoreCheck() {
   mainDispl.append(mainOutput);
-  userOutput.innerText += `\nScore: ${userScore}`;
+  userTotal.append(userTotalText);
+  compTotal.append(compTotalText);
+  if(userScore || compScore > 1)  {
+    userTotalText.innerText = `\nGames Won: ${userGamesWon}`;
+    compTotalText.innerText = `\nGames Won: ${compGamesWon}`;
+  }
+  userOutput.innerText += `\nRounds Won: ${userScore}`;
   compOutput.innerText += `\nScore: ${compScore}`;
   if(userScore == roundsToWin || compScore == roundsToWin) {
     mainOutput.innerText = "Game Over!";
     if(userScore > compScore) {
       mainOutput.innerText += `\nYou Won the Game! \n\nFinal Score: \n ${userName} Score: ${userScore} \nComputer Score: ${compScore}`;
+      userGamesWon += 1;
     } else {
       mainOutput.innerText += `\nYou Lost the Game! \n\nFinal Score: \n ${userName} Score: ${userScore} \nComputer Score: ${compScore}`;
+      compGamesWon += 1;
     }
     userScore = 0;
     compScore = 0;
