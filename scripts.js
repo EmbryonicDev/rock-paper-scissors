@@ -31,9 +31,9 @@ while(userName.length > 20) {
     userName = window.prompt("Choose a Name With 20 Characters or Less if You Want to Play");
   }
 
-roundsToWin = window.prompt("How Many Rounds Won will Determine the Winner?\nChoose Between 3 & 10");
+roundsToWin = window.prompt("How many Rounds Won will Determine the Winner?\nChoose a Number Between 3 & 10 to Start the Game.");
 while(roundsToWin == null || roundsToWin.trim() == "" || roundsToWin > 10 || roundsToWin < 3) {
-  roundsToWin = window.prompt("How many Rounds Won will Determine the Winner?/nChoose a Number Between 3 & 10 to Start the Game.");
+  roundsToWin = window.prompt("How many Rounds Won will Determine the Winner?\nChoose a Number Between 3 & 10 to Start the Game.");
 }
 
 mainOutput.innerText = `Welcome to the Galactic Battle Ground ${userName}!\n\nThe First Player to Score ${roundsToWin} Wins the Game.\n\n\nChoose  Your Weapon to Begin the Game\n ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ "`;
@@ -57,7 +57,6 @@ btnRock.addEventListener('click', () => {
   let computerSelection = computerPlay();
   selectionmainOutput(playerSelection, computerSelection);
   playRound(playerSelection, computerSelection);
-  // scoreCheck();
 });
 
 const btnPaper = document.querySelector('#btnPaper');
@@ -66,7 +65,6 @@ btnPaper.addEventListener('click', () => {
   let computerSelection = computerPlay();
   selectionmainOutput(playerSelection, computerSelection);
   playRound(playerSelection, computerSelection);
-  // scoreCheck();
 });
 
 const btnScissors = document.querySelector('#btnScissors');
@@ -75,13 +73,7 @@ btnScissors.addEventListener('click', () => {
   let computerSelection = computerPlay();
   selectionmainOutput(playerSelection, computerSelection);
   playRound(playerSelection, computerSelection);
-  // scoreCheck();
 });
-
-function scoreCheck() {
-
-
-}
 
 function playRound(playerSelection, computerSelection) {
   userOutput.style.cssText = "font-weight: normal";
@@ -116,17 +108,18 @@ function playRound(playerSelection, computerSelection) {
     compScore = 0;
     mainOutput.innerText += "\n\nChoose Your Weapon to Start a New Game...";
   }
-  userTotalText.innerText = `\nGames Won: ${userGamesWon}`;
-  compTotalText.innerText = `\nGames Won: ${compGamesWon}`;
-
-  if(userGamesWon > compGamesWon) userTotalText.style.cssText = "font-weight: bolder";
-  if(userGamesWon < compGamesWon) compTotalText.style.cssText = "font-weight: bolder";
-  if(userGamesWon == compGamesWon) compTotalText.style.cssText = "font-weight: normal";
-
-  userOutput.innerText += `\nRounds Won: ${userScore}`;
-  compOutput.innerText += `\nRounds Won: ${compScore}`;
-
-  mainDispl.append(mainOutput);
-  userTotal.append(userTotalText);
-  compTotal.append(compTotalText);
 }
+
+userTotalText.innerText = `\nGames Won: ${userGamesWon}`;
+compTotalText.innerText = `\nGames Won: ${compGamesWon}`;
+
+if(userGamesWon > compGamesWon) userTotalText.style.cssText = "font-weight: bolder";
+if(userGamesWon < compGamesWon) compTotalText.style.cssText = "font-weight: bolder";
+if(userGamesWon == compGamesWon) compTotalText.style.cssText = "font-weight: normal";
+
+userOutput.innerText += `\nRounds Won: ${userScore}`;
+compOutput.innerText += `\nRounds Won: ${compScore}`;
+
+mainDispl.append(mainOutput);
+userTotal.append(userTotalText);
+compTotal.append(compTotalText);
