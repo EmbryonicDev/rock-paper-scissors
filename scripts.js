@@ -108,9 +108,7 @@ function playRound(playerSelection, computerSelection) {
   } else if((playerSelection == "Rock" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Rock")) {
     compScore += 1;
     mainOutput.innerText = (`You Lose this Round! \n${computerSelection} Beats ${playerSelection}...`);
-  } else if(computerSelection == playerSelection) {
-    mainOutput.innerText = ("It's a Tie! Let's Try Again...");
   } else {
-      mainOutput.innerText += ("\nYou did not Choose a Valid Option! \nConcentrate, & Try Again!");
+    mainOutput.innerText = ("It's a Tie! Let's Try Again...");
   }
 }
