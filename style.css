@@ -46,17 +46,18 @@ h1  {
   border: solid white;
   margin-bottom: 10px;
   margin-top: 10px;
+  border-radius: 8px;
 }
 
 #playerBox  {
   display:flex;
-  flex: 1;
   align-items: center;
   justify-content: center;
   height: 200px;
   width: 90%;
   border: solid white;
   margin: 10px;
+  border-radius: 8px;
 }
  
 #compDispl  {
@@ -84,7 +85,7 @@ h1  {
 #mainDispl  {
   display: flex;
   flex: 1;
-  width: 88%;
+  width: 90%;
   justify-content: center;
   margin-bottom: 10px;
   margin-top: 0;
@@ -94,6 +95,7 @@ h1  {
   border: solid white;
   margin: 10px;
   margin-top: 0;
+  border-radius: 8px;
 }
 
 #btnRock,
@@ -102,7 +104,7 @@ h1  {
   background-size: cover;
   height: 130px;
   width: 80px;
-  margin: 10px 30px;
+  margin: 10px 26px;
 }
 
 #btnRock {
