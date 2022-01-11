@@ -18,7 +18,7 @@ compOutput.classList.add('paraDispl');
 userName = window.prompt("Choose Your Battle Name to Begin");
 if(userName == null || userName.trim() == "") userName = "Player";
 
-roundsToWin = window.prompt("How many Games will Declare the Winner?/nChoose Between 3 & 10");
+roundsToWin = window.prompt("How many Games Won will Determine the Winner?/nChoose Between 3 & 10");
 while(roundsToWin == null || roundsToWin.trim() == "" || roundsToWin > 10 || roundsToWin < 3) {
   roundsToWin = window.prompt("How many Games will Declare the Winner?/nChoose Between 3 & 10");
 }
@@ -32,8 +32,8 @@ function computerPlay() {
 }
 
 function selectionmainOutput(playerSelection, computerSelection) {
-  userOutput.innerText = userName + '\'s Weapon: ' + playerSelection;
-  compOutput.innerText = 'Computer\'s Weapon: ' + computerSelection;
+  userOutput.innerText = userName + '\nWeapon: ' + playerSelection;
+  compOutput.innerText = 'Computer\nWeapon: ' + computerSelection;
   compDispl.append(compOutput);
   userDispl.append(userOutput);
 }
