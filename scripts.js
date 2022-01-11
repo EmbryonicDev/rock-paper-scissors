@@ -99,6 +99,9 @@ function scoreCheck() {
   }
   userTotalText.innerText = `\nGames Won: ${userGamesWon}`;
   compTotalText.innerText = `\nGames Won: ${compGamesWon}`;
+
+  if(userGamesWon > compGamesWon) userTotalText.style.cssText = "font-weight: bolder";
+  if(userGamesWon < compGamesWon) compTotalText.style.cssText = "font-weight: bolder";
 }
 
 function playRound(playerSelection, computerSelection) {
