@@ -8,22 +8,22 @@ let compScore = 0;
 let userName = ""
 
 const mainDispl = document.querySelector('#mainDispl');
-const mainOutput = document.createElement('p');
-mainOutput.classList.add('paraDispl');
+const mainPargrph = document.createElement('p');
+mainPargrph.classList.add('paraDispl');
 
 const userDispl = document.querySelector('#userDispl');
-const userOutput = document.createElement('p');
-userOutput.classList.add('paraDispl');
-const userTotal = document.querySelector('#userTotal');
-const userTotalText = document.createElement('p');
-userTotalText.classList.add('paraDispl');
+const userPargrph = document.createElement('p');
+userPargrph.classList.add('paraDispl');
+const userTotalDispl = document.querySelector('#userTotal');
+const userTotalPargrph = document.createElement('p');
+userTotalPargrph.classList.add('paraDispl');
 
 const compDispl = document.querySelector('#compDispl');
-const compOutput = document.createElement('p');
-compOutput.classList.add('paraDispl');
-const compTotal = document.querySelector('#compTotal');
-const compTotalText = document.createElement('p');
-compTotalText.classList.add('paraDispl');
+const compPargrph = document.createElement('p');
+compPargrph.classList.add('paraDispl');
+const compTotalDispl = document.querySelector('#compTotal');
+const compTotalPargrph = document.createElement('p');
+compTotalPargrph.classList.add('paraDispl');
 
 userName = window.prompt("Choose Your Battle Name to Begin");
 if(userName == null || userName.trim() == "") userName = "Player";
@@ -36,92 +36,92 @@ while(roundsToWin == null || roundsToWin.trim() == "" || roundsToWin > 10 || rou
   roundsToWin = window.prompt("How many Rounds Won will Determine the Winner?\nChoose a Number Between 3 & 10 to Start the Game.");
 }
 
-mainOutput.innerText = `Welcome to the Galactic Battle Ground ${userName}!\n\nThe First Player to Score ${roundsToWin} Wins the Game.\n\n\nChoose  Your Weapon to Begin the Game\n ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ "`;
-mainOutput.style.cssText = "font-size: 28px; text-align: center";
-mainDispl.append(mainOutput);
+mainPargrph.innerText = `Welcome to the Galactic Battle Ground ${userName}!\n\nThe First Player to Score ${roundsToWin} Wins the Game.\n\n\nChoose  Your Weapon to Begin the Game\n ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ "`;
+mainPargrph.style.cssText = "font-size: 28px; text-align: center";
+mainDispl.append(mainPargrph);
 
 function computerPlay() {
   return(gameOptions[Math.floor(Math.random() * gameOptions.length)]);
 }
 
-function selectionmainOutput(playerSelection, computerSelection) {
-  userOutput.innerText = userName;
-  compOutput.innerText = 'Computer';
-  userOutput.innerText += `\nWeapon: ${playerSelection}`;
-  compOutput.innerText += `\nWeapon: ${computerSelection}`;
-  compDispl.append(compOutput);
-  userDispl.append(userOutput);
+function playersText(userSelect, compSelect) {
+  userPargrph.innerText = userName;
+  compPargrph.innerText = 'Computer';
+  userPargrph.innerText += `\nWeapon: ${userSelect}`;
+  compPargrph.innerText += `\nWeapon: ${compSelect}`;
+  compDispl.append(compPargrph);
+  userDispl.append(userPargrph);
 }
 
 const btnRock = document.querySelector('#btnRock');
 btnRock.addEventListener('click', () => {
-  let playerSelection = gameOptions[0];
-  let computerSelection = computerPlay();
-  selectionmainOutput(playerSelection, computerSelection);
-  playRound(playerSelection, computerSelection);
+  let userSelect = gameOptions[0];
+  let compSelect = computerPlay();
+  playersText(userSelect, compSelect);
+  playRound(userSelect, compSelect);
 });
 
 const btnPaper = document.querySelector('#btnPaper');
 btnPaper.addEventListener('click', () => {
-  let playerSelection = gameOptions[1];
-  let computerSelection = computerPlay();
-  selectionmainOutput(playerSelection, computerSelection);
-  playRound(playerSelection, computerSelection);
+  let userSelect = gameOptions[1];
+  let compSelect = computerPlay();
+  playersText(userSelect, compSelect);
+  playRound(userSelect, compSelect);
 });
 
 const btnScissors = document.querySelector('#btnScissors');
 btnScissors.addEventListener('click', () => {
-  let playerSelection = gameOptions[2];
-  let computerSelection = computerPlay();
-  selectionmainOutput(playerSelection, computerSelection);
-  playRound(playerSelection, computerSelection);
+  let userSelect = gameOptions[2];
+  let compSelect = computerPlay();
+  playersText(userSelect, compSelect);
+  playRound(userSelect, compSelect);
 });
 
-function playRound(playerSelection, computerSelection) {
-  userOutput.style.cssText = "font-weight: normal";
-  compOutput.style.cssText = "font-weight: normal";
-  userTotalText.innerText = `\nGames Won: ${userGamesWon}`;
-  compTotalText.innerText = `\nGames Won: ${compGamesWon}`;
-  if((playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper") || (playerSelection == "Rock" && computerSelection == "Scissors")) {
+function playRound(userSelect, compSelect) {
+  userPargrph.style.cssText = "font-weight: normal";
+  compPargrph.style.cssText = "font-weight: normal";
+  userTotalPargrph.innerText = `\nGames Won: ${userGamesWon}`;
+  compTotalPargrph.innerText = `\nGames Won: ${compGamesWon}`;
+  if((userSelect == "Paper" && compSelect == "Rock") || (userSelect == "Scissors" && compSelect == "Paper") || (userSelect == "Rock" && compSelect == "Scissors")) {
     userScore += 1;
-    mainOutput.innerText = (`You Win this Round!\n ${playerSelection} Beats ${computerSelection}...`);
-  } else if((playerSelection == "Rock" && computerSelection == "Paper") || (playerSelection == "Paper" && computerSelection == "Scissors") || (playerSelection == "Scissors" && computerSelection == "Rock")) {
+    mainPargrph.innerText = (`You Win this Round!\n ${userSelect} Beats ${compSelect}...`);
+  } else if((userSelect == "Rock" && compSelect == "Paper") || (userSelect == "Paper" && compSelect == "Scissors") || (userSelect == "Scissors" && compSelect == "Rock")) {
     compScore += 1;
-    mainOutput.innerText = (`You Lose this Round! \n${computerSelection} Beats ${playerSelection}...`);
+    mainPargrph.innerText = (`You Lose this Round! \n${compSelect} Beats ${userSelect}...`);
   } else {
-    mainOutput.innerText = ("It's a Tie! Let's Try Again...");
+    mainPargrph.innerText = ("It's a Tie! Let's Try Again...");
   }
-  userOutput.innerText += `\nRounds Won: ${userScore}`
-  compOutput.innerText += `\nRounds Won: ${compScore}`
+  userPargrph.innerText += `\nRounds Won: ${userScore}`
+  compPargrph.innerText += `\nRounds Won: ${compScore}`
   if(userScore == roundsToWin || compScore == roundsToWin) {
-    mainOutput.innerText = "Game Over!";
+    mainPargrph.innerText = "Game Over!";
     if(userScore > compScore) {
-      mainOutput.innerText += `\nYou Won the Game!\n${playerSelection} Beats ${computerSelection}...\nFinal Score: \n ${userName} Score: ${userScore} \nComputer Score: ${compScore}`;
-      userOutput.innerText = userName + " is the Winner!!!"
-      userOutput.style.cssText = "font-weight: bolder";
-      compOutput.innerText = "Computer is the Loser!!!"
-      compOutput.style.cssText = "font-weight: bolder";
+      mainPargrph.innerText += `\nYou Won the Game!\n${userSelect} Beats ${compSelect}...\nFinal Score: \n ${userName} Score: ${userScore} \nComputer Score: ${compScore}`;
+      userPargrph.innerText = userName + " is the Winner!!!"
+      userPargrph.style.cssText = "font-weight: bolder";
+      compPargrph.innerText = "Computer is the Loser!!!"
+      compPargrph.style.cssText = "font-weight: bolder";
       userGamesWon += 1;
     } else {
-      mainOutput.innerText += `\nYou Lost the Game!\n${computerSelection} Beats ${playerSelection}...\nFinal Score: \n ${userName} Score: ${userScore} \nComputer Score: ${compScore}`;
-      userOutput.innerText = userName + " is the Loser!!!"
-      userOutput.style.cssText = "font-weight: bolder";
-      compOutput.innerText = "Computer is the Winner!!!"
-      compOutput.style.cssText = "font-weight: bolder";
+      mainPargrph.innerText += `\nYou Lost the Game!\n${compSelect} Beats ${userSelect}...\nFinal Score: \n ${userName} Score: ${userScore} \nComputer Score: ${compScore}`;
+      userPargrph.innerText = userName + " is the Loser!!!"
+      userPargrph.style.cssText = "font-weight: bolder";
+      compPargrph.innerText = "Computer is the Winner!!!"
+      compPargrph.style.cssText = "font-weight: bolder";
       compGamesWon += 1;
     }
     userScore = 0;
     compScore = 0;
-    mainOutput.innerText += "\n\nChoose Your Weapon to Start a New Game...";
+    mainPargrph.innerText += "\n\nChoose Your Weapon to Start a New Game...";
 
-    userTotalText.innerText = `\nGames Won: ${userGamesWon}`;
-    compTotalText.innerText = `\nGames Won: ${compGamesWon}`;
-    if(userGamesWon == compGamesWon) compTotalText.style.cssText = "font-weight: normal" && userTotalText.style.cssText == "font-weight: normal";
-    if(userGamesWon > compGamesWon) userTotalText.style.cssText = "font-weight: bolder";
-    if(userGamesWon < compGamesWon) compTotalText.style.cssText = "font-weight: bolder";
+    userTotalPargrph.innerText = `\nGames Won: ${userGamesWon}`;
+    compTotalPargrph.innerText = `\nGames Won: ${compGamesWon}`;
+    if(userGamesWon == compGamesWon) compTotalPargrph.style.cssText = "font-weight: normal" && userTotalPargrph.style.cssText == "font-weight: normal";
+    if(userGamesWon > compGamesWon) userTotalPargrph.style.cssText = "font-weight: bolder";
+    if(userGamesWon < compGamesWon) compTotalPargrph.style.cssText = "font-weight: bolder";
   }
 }
 
-mainDispl.append(mainOutput);
-userTotal.append(userTotalText);
-compTotal.append(compTotalText);
+mainDispl.append(mainPargrph);
+userTotalDispl.append(userTotalPargrph);
+compTotalDispl.append(compTotalPargrph);
