@@ -90,14 +90,12 @@ function scoreCheck() {
       mainOutput.innerText += `\nYou Lost the Game! \n\nFinal Score: \n ${userName} Score: ${userScore} \nComputer Score: ${compScore}`;
       compGamesWon += 1;
     }
-    if(userGamesWon > 0 || compGamesWon > 0)  {
-      userTotalText.innerText = `\nGames Won: ${userGamesWon}`;
-      compTotalText.innerText = `\nGames Won: ${compGamesWon}`;
-    }
     userScore = 0;
     compScore = 0;
     mainOutput.innerText += "\n\nChoose Your Weapon to Start a New Game...";
   }
+  userTotalText.innerText = `\nGames Won: ${userGamesWon}`;
+  compTotalText.innerText = `\nGames Won: ${compGamesWon}`;
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -111,6 +109,5 @@ function playRound(playerSelection, computerSelection) {
     mainOutput.innerText = ("It's a Tie! Let's Try Again...");
   } else {
       mainOutput.innerText += ("\nYou did not Choose a Valid Option! \nConcentrate, & Try Again!");
-
   }
 }
