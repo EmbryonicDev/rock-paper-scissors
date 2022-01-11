@@ -71,7 +71,7 @@ h1  {
 #userDispl, 
 #compDispl  {
   display: flex;
-  text-align: center;
+  align-items: center;
   width: 90%;
   height: 80%;
 }
