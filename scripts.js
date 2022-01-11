@@ -45,8 +45,10 @@ function computerPlay() {
 }
 
 function selectionmainOutput(playerSelection, computerSelection) {
-  userOutput.innerText = userName + '\nWeapon: ' + playerSelection;
-  compOutput.innerText = 'Computer\nWeapon: ' + computerSelection;
+  userOutput.innerText = userName;
+  compOutput.innerText = 'Computer';
+  userOutput.innerText += `\nWeapon: ${playerSelection}`;
+  compOutput.innerText += `\nWeapon: ${computerSelection}`;
   compDispl.append(compOutput);
   userDispl.append(userOutput);
 }
@@ -87,6 +89,8 @@ function playRound(playerSelection, computerSelection) {
   } else {
     mainOutput.innerText = ("It's a Tie! Let's Try Again...");
   }
+  userOutput.innerText += `\nRounds Won: ${userScore}`
+  compOutput.innerText += `\nRounds Won: ${compScore}`
   if(userScore == roundsToWin || compScore == roundsToWin) {
     mainOutput.innerText = "Game Over!";
     if(userScore > compScore) {
@@ -107,18 +111,14 @@ function playRound(playerSelection, computerSelection) {
     userScore = 0;
     compScore = 0;
     mainOutput.innerText += "\n\nChoose Your Weapon to Start a New Game...";
+
+    userTotalText.innerText = `\nGames Won: ${userGamesWon}`;
+    compTotalText.innerText = `\nGames Won: ${compGamesWon}`;
+    if(userGamesWon == compGamesWon) compTotalText.style.cssText = "font-weight: normal" && userTotalText.style.cssText == "font-weight: normal";
+    if(userGamesWon > compGamesWon) userTotalText.style.cssText = "font-weight: bolder";
+    if(userGamesWon < compGamesWon) compTotalText.style.cssText = "font-weight: bolder";
   }
 }
-
-userTotalText.innerText = `\nGames Won: ${userGamesWon}`;
-compTotalText.innerText = `\nGames Won: ${compGamesWon}`;
-
-if(userGamesWon > compGamesWon) userTotalText.style.cssText = "font-weight: bolder";
-if(userGamesWon < compGamesWon) compTotalText.style.cssText = "font-weight: bolder";
-if(userGamesWon == compGamesWon) compTotalText.style.cssText = "font-weight: normal";
-
-userOutput.innerText += `\nRounds Won: ${userScore}`;
-compOutput.innerText += `\nRounds Won: ${compScore}`;
 
 mainDispl.append(mainOutput);
 userTotal.append(userTotalText);
