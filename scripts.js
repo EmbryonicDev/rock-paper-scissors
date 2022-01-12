@@ -54,6 +54,7 @@ function compPlay() {
   return(gameOptions[Math.floor(Math.random() * gameOptions.length)]);
 }
 
+// User / comp display
 function playersText(userSelect, compSelect) {
   userPargrph.innerText = userName;
   compPargrph.innerText = 'Computer';
@@ -92,6 +93,8 @@ function playRound(userSelect, compSelect) {
   compPargrph.style.cssText = "font-weight: normal";
   userTotalPargrph.innerText = `Games Won: ${userGamesWon}`;
   compTotalPargrph.innerText = `Games Won: ${compGamesWon}`;
+
+  // Play normal round
   if((userSelect == "Paper" && compSelect == "Rock") || (userSelect == "Scissors" && compSelect == "Paper") || (userSelect == "Rock" && compSelect == "Scissors")) {
     userScore += 1;
     mainPargrph.innerText = (`You Win this Round!\n ${userSelect} Beats ${compSelect}...`);
@@ -101,8 +104,11 @@ function playRound(userSelect, compSelect) {
   } else {
     mainPargrph.innerText = ("It's a Tie! Let's Try Again...");
   }
+
   userPargrph.innerText += `\nRounds Won: ${userScore}`
   compPargrph.innerText += `\nRounds Won: ${compScore}`
+
+  // Final round
   if(userScore == roundsToWin || compScore == roundsToWin) {
     mainPargrph.innerText = "Game Over!";
     if(userScore > compScore) {
@@ -120,10 +126,14 @@ function playRound(userSelect, compSelect) {
       compPargrph.style.cssText = "font-weight: bolder";
       compGamesWon += 1;
     }
+
+    // Reset score
     userScore = 0;
     compScore = 0;
+
     mainPargrph.innerText += "\n\nChoose Your Weapon to Start a New Game...";
 
+    // + Bold text to winner's game count
     userTotalPargrph.innerText = `Games Won: ${userGamesWon}`;
     compTotalPargrph.innerText = `Games Won: ${compGamesWon}`;
     if(userGamesWon > compGamesWon) {
