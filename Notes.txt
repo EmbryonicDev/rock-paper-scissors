@@ -1,7 +1,0 @@
-For animation: LottieFiles / https://greensock.com/
-
-
-Create class for paragraphs to remove margins
-
-fix bold bug
-
