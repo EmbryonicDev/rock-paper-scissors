@@ -51,30 +51,12 @@ h1  {
 
 #playerBox  {
   display:flex;
-  /* flex: 1; */
   align-items: flex-start;
   justify-content: space-evenly;
   gap: 30px;
   height: fit-content;
   width: 100%;
   margin-top: 10px;
-}
-
-#totalGames  {
-  display:flex;
-  flex-shrink: 1;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 10px;
-  height: fit-content;
-  width: 95%;
-}
-
-#userTotal,
-#compTotal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #userDispl, 
@@ -104,18 +86,35 @@ h1  {
   margin-right: 10px;
 }
 
+#totalGames  {
+  display:flex;
+  flex-shrink: 1;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  height: fit-content;
+  width: 95%;
+}
+
+#userTotal,
+#compTotal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #mainDispl  {
   display: flex;
   flex: 1;
   width: 90%;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   margin-top: 0;
 }
 
 #usrBtn {
-  margin: 10px;
+  margin: 0;
   margin-top: 0;
 }
 
@@ -126,6 +125,7 @@ h1  {
   height: 130px;
   width: 80px;
   margin: 10px 10px;
+  border-radius: 8px;
 }
 
 .hoverBtn:hover {
