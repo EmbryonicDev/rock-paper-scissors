@@ -2,6 +2,8 @@
 
 live: https://embryonicdev.github.io/rock-paper-scissors/
 
+*My first JavaScript project.
+
 Simple implementation of grade-school classic “rock paper scissors" where it's the player vs the computer. 
 
 This game will further evolve as I gain more knowledge. 
