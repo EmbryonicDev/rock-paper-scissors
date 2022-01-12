@@ -42,7 +42,7 @@ while(roundsToWin == null || roundsToWin.trim() == "" || roundsToWin > 10 || rou
 }
 
 // Main display welcome message
-mainPargrph.innerText = `Welcome to the Galactic Battle Ground ${userName}!\n\nThe First Player to Score ${roundsToWin} Wins the Game.\n\n\nChoose  Your Weapon to Begin the Game\n ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ "`;
+mainPargrph.innerText = `Welcome to the Galactic Battle Ground ${userName}!\n\nThe First Player to Score ${roundsToWin} Wins the Game.\n\n\nChoose  Your Weapon to Begin the Game\n ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ `;
 mainPargrph.style.cssText = "font-size: 28px; text-align: center";
 userTotalPargrph.innerText = ` * * * * * `;
 compTotalPargrph.innerText = ` * * * * * `;
