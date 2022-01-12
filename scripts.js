@@ -50,7 +50,7 @@ mainDispl.append(mainPargrph);
 userTotalDispl.append(userTotalPargrph);
 compTotalDispl.append(compTotalPargrph);
 
-function computerPlay() {
+function compPlay() {
   return(gameOptions[Math.floor(Math.random() * gameOptions.length)]);
 }
 
@@ -66,7 +66,7 @@ function playersText(userSelect, compSelect) {
 const btnRock = document.querySelector('#btnRock');
 btnRock.addEventListener('click', () => {
   let userSelect = gameOptions[0];
-  let compSelect = computerPlay();
+  let compSelect = compPlay();
   playersText(userSelect, compSelect);
   playRound(userSelect, compSelect);
 });
@@ -74,7 +74,7 @@ btnRock.addEventListener('click', () => {
 const btnPaper = document.querySelector('#btnPaper');
 btnPaper.addEventListener('click', () => {
   let userSelect = gameOptions[1];
-  let compSelect = computerPlay();
+  let compSelect = compPlay();
   playersText(userSelect, compSelect);
   playRound(userSelect, compSelect);
 });
@@ -82,7 +82,7 @@ btnPaper.addEventListener('click', () => {
 const btnScissors = document.querySelector('#btnScissors');
 btnScissors.addEventListener('click', () => {
   let userSelect = gameOptions[2];
-  let compSelect = computerPlay();
+  let compSelect = compPlay();
   playersText(userSelect, compSelect);
   playRound(userSelect, compSelect);
 });
