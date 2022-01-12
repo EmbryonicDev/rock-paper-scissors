@@ -7,35 +7,41 @@ let userScore = 0;
 let compScore = 0;
 let userName = ""
 
+// Main display
 const mainDispl = document.querySelector('#mainDispl');
 const mainPargrph = document.createElement('p');
 mainPargrph.classList.add('paraDispl');
 
+// User / comp display
 const userDispl = document.querySelector('#userDispl');
 const userPargrph = document.createElement('p');
 userPargrph.classList.add('paraDispl');
-const userTotalDispl = document.querySelector('#userTotal');
-const userTotalPargrph = document.createElement('p');
-userTotalPargrph.classList.add('paraDispl');
-
 const compDispl = document.querySelector('#compDispl');
 const compPargrph = document.createElement('p');
 compPargrph.classList.add('paraDispl');
+
+// User / comp total score 
+const userTotalDispl = document.querySelector('#userTotal');
+const userTotalPargrph = document.createElement('p');
+userTotalPargrph.classList.add('paraDispl');
 const compTotalDispl = document.querySelector('#compTotal');
 const compTotalPargrph = document.createElement('p');
 compTotalPargrph.classList.add('paraDispl');
 
+// User name prompt
 userName = window.prompt("Choose Your Battle Name to Begin");
 if(userName == null || userName.trim() == "") userName = "Player";
 while(userName.length > 20) {
     userName = window.prompt("Choose a Name With 20 Characters or Less if You Want to Play");
   }
 
+  // Rounds to win prompt
 roundsToWin = window.prompt("How many Rounds Won will Determine the Winner?\nChoose a Number Between 3 & 10 to Start the Game.");
 while(roundsToWin == null || roundsToWin.trim() == "" || roundsToWin > 10 || roundsToWin < 3) {
   roundsToWin = window.prompt("How many Rounds Won will Determine the Winner?\nChoose a Number Between 3 & 10 to Start the Game.");
 }
 
+// Main display welcome message
 mainPargrph.innerText = `Welcome to the Galactic Battle Ground ${userName}!\n\nThe First Player to Score ${roundsToWin} Wins the Game.\n\n\nChoose  Your Weapon to Begin the Game\n ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ "`;
 mainPargrph.style.cssText = "font-size: 28px; text-align: center";
 userTotalPargrph.innerText = ` * * * * * `;
@@ -120,16 +126,15 @@ function playRound(userSelect, compSelect) {
 
     userTotalPargrph.innerText = `Games Won: ${userGamesWon}`;
     compTotalPargrph.innerText = `Games Won: ${compGamesWon}`;
-    // if(userGamesWon == compGamesWon) compTotalPargrph.style.cssText = "font-weight: normal" && userTotalPargrph.style.cssText == "font-weight: normal";
     if(userGamesWon > compGamesWon) {
       userTotalPargrph.style.cssText = "font-weight: bolder";
-      compTotalPargrph.style.cssText = "font-weight: normal"
+      compTotalPargrph.style.cssText = "font-weight: normal";
     } else if(userGamesWon < compGamesWon) {
       userTotalPargrph.style.cssText = "font-weight: normal";
-      compTotalPargrph.style.cssText = "font-weight: bolder"
+      compTotalPargrph.style.cssText = "font-weight: bolder";
     } else  {
       userTotalPargrph.style.cssText = "font-weight: normal";
-      compTotalPargrph.style.cssText = "font-weight: normal"
+      compTotalPargrph.style.cssText = "font-weight: normal";
     }
   }
 }
